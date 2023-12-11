@@ -5,10 +5,15 @@ void ply2();
 void chnce();
 void disp();
 void check();
+void start();
 char arr[10][10];
 int main()
 {
-    int i,j;
+start();
+return 0;
+}
+void start(){
+        int i,j;
     char arr[10][10],c;
    int ch;
    printf("please select the player one or two press 1 or 2\n");
@@ -25,9 +30,8 @@ int main()
    }
    }
    else{
-    printf("please select only 1 or 2 ");
+    start();
    }
-return 0;
 }
 void check(){
          if(arr[0][0]=='o'&&arr[0][1]=='x'&&arr[0][2]=='x'&&
@@ -197,7 +201,6 @@ void check(){
               arr[2][0]=='x'&&arr[2][1]=='x'&&arr[2][2]=='o'){
         printf("The match is Draw!");
         exit(0);
-
               }  
       else if(arr[0][0]=='x'&&arr[0][1]=='x'&&arr[0][2]=='o'&&
               arr[1][0]=='o'&&arr[1][1]=='o'&&arr[1][2]=='x'&&
@@ -236,9 +239,9 @@ void check(){
         exit(0);
               } 
 }
-
 void disp()
 {
+    
     printf("    |       |       \n");
     printf(" %c  |  %c        %c \n",arr[0][0],arr[0][1],arr[0][2]);
     printf("____|_______|_______\n");
@@ -254,39 +257,43 @@ void chnce(){
    scanf("\n%d",&ch);
             if(ch== 1){
             scanf("\n%c",&arr[0][0]);
-            disp();
+           disp();
             }
-            if(ch==2){
+            else if(ch==2){
             scanf("\n%c",&arr[0][1]);
             disp();
             }
-            if(ch==3){
+            else if(ch==3){
             scanf("\n%c",&arr[0][2]);
             disp();
             }
-            if(ch==4){
+            else if(ch==4){
             scanf("\n%c",&arr[1][0]);
             disp();
             }
-            if(ch==5){
+            else if(ch==5){
             scanf("\n%c",&arr[1][1]);
             disp();
             }
-            if(ch==6){
+            else if(ch==6){
             scanf("\n%c",&arr[1][2]);
             disp();
             }
-            if(ch==7){
+            else if(ch==7){
             scanf("\n%c",&arr[2][0]);
             disp();
             }
-            if(ch==8){
+            else if(ch==8){
             scanf("\n%c",&arr[2][1]);
             disp();
             }
-            if(ch==9){
+            else if(ch==9){
             scanf("\n%c",&arr[2][2]);
             disp();
+            }
+            else{
+                printf("please enter valid input 1 to 9");
+                chnce();
             }
 }
 void ply1()
@@ -304,7 +311,6 @@ void ply1()
     {
         printf("player 1 is win"); 
         exit(0); 
-    
     }
     else if(arr[0][0]=='x'&&arr[1][1]=='x'&&arr[2][2]=='x')
     {
